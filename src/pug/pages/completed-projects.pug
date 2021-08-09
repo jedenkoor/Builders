@@ -1,0 +1,83 @@
+extends ../template
+
+block variables
+  - var title = 'Построенные проекты'
+
+block content
+  section.projects
+    .projects__top.container 
+      h1.title Построенные проекты
+      p.projects__text У всех нас свои предпочтения, вкусы и привычки, но каждому хочется быть стильным и ярким. Изделия созданные нами с нуля достаточно износостойкие и становятся эталоном качества для других.
+      ul.projects__filters.projects-filters
+        li.projects-filters__item.projects-filters__item--sort.select(select--active)
+          button.projects-filters__btn.select-open По популярности
+          .projects-filters__content.projects-filters-content.select-content 
+            label.projects-filters-content__item
+              input.visually-hidden(type="radio" name="sort" checked)
+              span По популярности
+            label.projects-filters-content__item
+              input.visually-hidden(type="radio" name="sort")
+              span От А до Я
+            label.projects-filters-content__item
+              input.visually-hidden(type="radio" name="sort")
+              span От Я до А
+            label.projects-filters-content__item
+              input.visually-hidden(type="radio" name="sort")
+              span Сначала дешевые
+            label.projects-filters-content__item
+              input.visually-hidden(type="radio" name="sort")
+              span Сначала дорогие
+            button.projects-filters-content__accept.primary-btn Применить
+        li.projects-filters__item.select(select--active) 
+          button.projects-filters__btn.select-open(filters-count="1") Материал
+          .projects-filters__content.select-content 
+        li.projects-filters__item.select(select--active) 
+          button.projects-filters__btn.select-open Площадь (м2)
+          .projects-filters__content.select-content 
+        li.projects-filters__item.select(select--active) 
+          button.projects-filters__btn.select-open Размер
+          .projects-filters__content.select-content 
+        li.projects-filters__item.select(select--active) 
+          button.projects-filters__btn.select-open(filters-count="2") Этажность
+          .projects-filters__content.select-content 
+        li.projects-filters__item.select(select--active) 
+          button.projects-filters__btn.select-open(filters-count="3") Кол-во комнат
+          .projects-filters__content.select-content 
+        li.projects-filters__item.select(select--active) 
+          button.projects-filters__btn.select-open Цена (руб)
+          .projects-filters__content.select-content
+      button.projects__clear Очистить фильтр
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.5 6.5L17.5 18.5M5.5 18.5L17.5 6.5" stroke="#151515" stroke-opacity="0.4"/>
+        </svg>
+
+    ul.border-block
+      .projects__container--completed
+        include ../includes/card-portfolio.pug
+        include ../includes/card-portfolio.pug
+        include ../includes/card-portfolio.pug
+        include ../includes/card-portfolio.pug
+        include ../includes/card-portfolio.pug
+
+    .container
+      ul.projects__pagination.projects-pagination
+        li.projects-pagination__item 
+          .projects-pagination__link.projects-pagination__link--arr
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 12L10 8M6 12L10 16M6 12H18.5" stroke="#151515"/>
+            </svg>
+        li.projects-pagination__item 
+          .projects-pagination__link.projects-pagination__link--active 01
+        li.projects-pagination__item 
+          a.projects-pagination__link(href="#") 02
+        li.projects-pagination__item 
+          a.projects-pagination__link(href="#") 03
+        li.projects-pagination__item 
+          .projects-pagination__link ...
+        li.projects-pagination__item 
+          a.projects-pagination__link(href="#") 20
+        li.projects-pagination__item 
+          a.projects-pagination__link.projects-pagination__link--arr(href="#") 
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.5 12L14.5 8M18.5 12L14.5 16M18.5 12H6" stroke="#151515"/>
+            </svg>

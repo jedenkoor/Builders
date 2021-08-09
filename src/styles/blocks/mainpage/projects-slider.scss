@@ -1,0 +1,90 @@
+.projects-slider {
+  &__container {
+    padding-top: 120px;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60px;
+  }
+  &__tags {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+  }
+  &__tag {
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+    input {
+      &:checked + span {
+        background-color: var(--violet-blue);
+        color: var(--neutral-14);
+      }
+    }
+    span {
+      display: block;
+      padding: 9px 21px;
+      background-color: var(--violet-blue-light-light);
+      border-radius: 6px;
+      border: 1px solid transparent;
+      color: var(--violet-blue);
+      cursor: pointer;
+      transition: 0.2s;
+      @include hover {
+        &:hover {
+          border-color: var(--violet-blue);
+        }
+      }
+      @include active {
+        &:active {
+          border-color: var(--violet-blue);
+        }
+      }
+    }
+  }
+  &__all {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px;
+    color: var(--orange);
+    transition: color 0.2s;
+    @include hover {
+      &:hover,
+      &:focus {
+        color: var(--violet-blue);
+      }
+    }
+    @include active {
+      &:active {
+        color: var(--violet-blue);
+      }
+    }
+  }
+  &__wrapper {
+    position: relative;
+    padding: 0;
+    .swiper-button-next {
+      right: -40px;
+    }
+    .swiper-button-prev {
+      left: -40px;
+    }
+  }
+  &__swiper {
+    margin-left: -1px;
+    margin-right: -1px;
+  }
+  &__list {
+    padding-left: 0;
+    list-style: none;
+  }
+  &__item {
+    height: auto;
+    &:not(:last-child) {
+      border-right: 1px solid var(--neutral-10);
+    }
+  }
+}

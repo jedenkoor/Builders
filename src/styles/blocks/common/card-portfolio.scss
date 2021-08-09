@@ -1,0 +1,92 @@
+.card-portfolio {
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--neutral-10);
+  }
+  &__container {
+    display: flex;
+    padding: 0;
+  }
+  &__col {
+    &:first-child {
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      border-right: 1px solid var(--neutral-10);
+    }
+    &:last-child {
+      flex: 0 0 472px;
+      margin: 40px;
+    }
+  }
+  &__title {
+    margin-top: 0;
+    margin-bottom: 22px;
+    font-family: 'Raleway';
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 33px;
+    letter-spacing: 0.01em;
+  }
+  &__text {
+    margin-bottom: 35px;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 22px 34px;
+    width: fit-content;
+    margin-bottom: 40px;
+    padding-left: 0;
+    list-style: none;
+  }
+  &-grid {
+    &__item {
+      display: flex;
+      align-items: center;
+    }
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin-right: 14px;
+      background-color: var(--violet-blue-light-light);
+      border-radius: 6px;
+    }
+    &__title {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+      line-height: 16px;
+      color: var(--neutral-6);
+    }
+    &__value {
+      display: block;
+      color: var(--neutral-2);
+    }
+  }
+  &__btns {
+    display: flex;
+    margin-top: auto;
+  }
+  &__btn {
+    padding: 14px 31px;
+    &:not(:last-child) {
+      margin-right: 21px;
+    }
+  }
+  &-slider {
+    &__wrapper {
+      padding-left: 0;
+      list-style: none;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    min-height: 366px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+}

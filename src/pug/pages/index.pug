@@ -1,0 +1,66 @@
+extends ../template
+
+block variables
+  - var title = 'Карта сайта'
+
+block content
+  style.
+    .content{
+      display: flex;
+      flex-direction: column
+    }
+    .map__container{
+      flex: 1
+    }
+    .title{
+      margin-bottom: 50px
+    }
+    table{
+      width: 100%;
+      border-collapse: collapse;
+    }
+    td{
+      width: 50%;
+      border: 1px solid var(--neutral-1);
+      transition: background-color .1s
+    }
+    td:hover{
+      background-color: var(--orange-light);
+    }
+    td a{
+      display: block;
+      padding: 20px;
+    }
+    @media screen and (max-width: 767px) {
+      tr,
+      td {
+        display: block
+      }
+      tr:not(:last-child) td{
+        border-bottom: none
+      }
+      td{
+        width: 100%
+      }
+      td a{
+        padding: 10px;
+        font-size: 16px;
+      }
+    }
+  .container.map__container
+    h1.title Карта сайта
+    table
+      tbody
+        tr
+          td 
+            a(href="main.html" target="_blank") Главная
+        tr
+          td 
+            a(href="projects.html" target="_blank") Проекты
+          td 
+            a(href="project-page.html" target="_blank") Страница проекта
+        tr
+          td 
+            a(href="completed-projects.html" target="_blank") Построенные проекты
+          td 
+            a(href="completed-project-page.html" target="_blank") Страница построенного проекта

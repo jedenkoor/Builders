@@ -1,0 +1,143 @@
+extends ../template
+
+block variables
+  - var title = 'Страница проекта'
+
+block content
+  section.project
+    .container.section-top
+      h1.title Проект бремен 456
+
+    .border-block
+      .container.project__container
+        .project__gallery.project-gallery
+          .project-gallery__slider.project-gallery-slider.swiper-container
+            ul.project-gallery-slider__wrapper.swiper-wrapper 
+              li.project-gallery-slider__item.swiper-slide 
+                picture.project-gallery-slider__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.project-gallery-slider__img(src="images/house.jpg" alt="Этапы работы")
+              li.project-gallery-slider__item.swiper-slide 
+                picture.project-gallery-slider__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.project-gallery-slider__img(src="images/house.jpg" alt="Этапы работы")
+              li.project-gallery-slider__item.swiper-slide 
+                picture.project-gallery-slider__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.project-gallery-slider__img(src="images/house.jpg" alt="Этапы работы")
+              li.project-gallery-slider__item.swiper-slide 
+                picture.project-gallery-slider__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.project-gallery-slider__img(src="images/house.jpg" alt="Этапы работы")
+              li.project-gallery-slider__item.swiper-slide 
+                picture.project-gallery-slider__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.project-gallery-slider__img(src="images/house.jpg" alt="Этапы работы")
+              li.project-gallery-slider__item.swiper-slide 
+                picture.project-gallery-slider__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.project-gallery-slider__img(src="images/house.jpg" alt="Этапы работы")
+            .swiper-pagination
+          .project-gallery__thumbs.project-gallery-thumbs.swiper-container
+            ul.project-gallery-thumbs__wrapper.swiper-wrapper 
+              li.project-gallery-thumbs__item.swiper-slide 
+                picture.project-gallery-thumbs__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.project-gallery-thumbs__img(src="images/house.jpg" alt="Этапы работы")
+              li.project-gallery-thumbs__item.swiper-slide 
+                picture.project-gallery-thumbs__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.project-gallery-thumbs__img(src="images/house.jpg" alt="Этапы работы")
+              li.project-gallery-thumbs__item.swiper-slide 
+                picture.project-gallery-thumbs__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.project-gallery-thumbs__img(src="images/house.jpg" alt="Этапы работы")
+              li.project-gallery-thumbs__item.swiper-slide 
+                picture.project-gallery-thumbs__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.project-gallery-thumbs__img(src="images/house.jpg" alt="Этапы работы")
+              li.project-gallery-thumbs__item.swiper-slide 
+                picture.project-gallery-thumbs__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.project-gallery-thumbs__img(src="images/house.jpg" alt="Этапы работы")
+              li.project-gallery-thumbs__item.swiper-slide 
+                picture.project-gallery-thumbs__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.project-gallery-thumbs__img(src="images/house.jpg" alt="Этапы работы")
+        .project__info.project-info
+          .project-info__wrap
+            h3.project-info__title Описание
+            p.project-info__descr Разнообразный и богатый опыт постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения направлений прогрессивного развития. Не следует, однако забывать, что дальнейшее развитие различных форм деятельности обеспечивает широкому кругу участие формировании позиций, занимаемых в отношении поставленных ранее нами задач поставленных ранее нами задач.
+          .project-info__wrap
+            h3.project-info__title Характеристики
+            .project-info__row
+              span Материалы
+              span Каркас, кирпич
+            .project-info__row
+              span Площадь
+              span 89.50 м²
+            .project-info__row
+              span Полезная площадь
+              span 76.50 м²
+            .project-info__row
+              span Название AP
+              span А 233Ф
+            .project-info__row
+              span Площадь террас и балконов
+              span 19.50 м²
+            .project-info__row
+              span Площадь 1-го этажа
+              span 45.50 м²
+            .project-info__row
+              span Площадь 2-го этажа
+              span 32.50 м²
+            button.project-info__btn.primary-btn Сделать заказ
+
+    .project__content.project-content 
+      .project-content__top.container
+        h2.project-content__title Варианты комплектаций
+        .project-content__row 
+          ul.projects-slider__tags
+            li.projects-slider__tag 
+              label
+                input.visually-hidden(type="radio" name="projects" checked)
+                span С монтажем
+            li.projects-slider__tag 
+              label
+                input.visually-hidden(type="radio" name="projects")
+                span Закрытый контур
+            li.projects-slider__tag 
+              label
+                input.visually-hidden(type="radio" name="projects")
+                span Отделка +
+          span.project-content__price 5 650 000 руб
+      .project-content__main.project-content-main
+        .project-content-main__container.container 
+          .project-content__item.project-content__item--header Комплект поставки
+          .project-content__item.project-content__item--header Детализация
+          .project-content__item.project-content__item--header В комплект не включены
+          .project-content__item За какое время может быть построен хороший дом или баня из бруса?
+          .project-content__item Различных форм деятельности обеспечивает широкому
+          .project-content__item Разнообразный и богатый опыт постоянное обеспечение
+          .project-content__item За какое время может быть построен хороший дом или баня из бруса и камня в кротчайшие проки
+          .project-content__item Широкому кругу участие формировании позиций и наблюдений
+          .project-content__item Нашей деятельности требуют определения и уточнения направлений прогрессивного развития опыт
+          .project-content__item За какое время может быть построен хороший дом или баня из бруса?
+          .project-content__item Различных форм деятельности обеспечивает широкому
+          .project-content__item Разнообразный и богатый опыт постоянное обеспечение
+          .project-content__item За какое время может быть построен хороший дом или баня из бруса?
+          .project-content__item Различных форм деятельности обеспечивает широкому
+          .project-content__item Разнообразный и богатый опыт постоянное обеспечение
+          .project-content__item За какое время может быть построен хороший дом или баня из бруса и камня в кротчайшие проки
+          .project-content__item Широкому кругу участие формировании позиций и наблюдений
+          .project-content__item
+          .project-content__item
+          .project-content__item Различных форм деятельности обеспечивает широкому
+          .project-content__item
+          .project-content__item
+          .project-content__item За какое время может быть построен хороший дом или баня из бруса и камня в кротчайшие проки
+            
+        .project-content-main__bot.container 
+          span.project-content__price 5 650 000 руб
+          button.project-content-main__btn.primary-btn Сделать заказ
+

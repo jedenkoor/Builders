@@ -1,0 +1,64 @@
+li.card-portfolio
+  .container.card-portfolio__container
+    .card-portfolio__col 
+      h3.card-portfolio__title Каркасный дом по индивидуальному проекту
+      p.card-portfolio__text Равным образом рамки и место обучения кадров позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач
+      ul.card-portfolio__grid.card-portfolio-grid 
+        li.card-portfolio-grid__item
+          .card-portfolio-grid__icon 
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.5 7.5H15.5V15.5M7.5 7.5V4M7.5 7.5H4M15.5 15.5H7.5V10M15.5 15.5V19M15.5 15.5H19" stroke="#6F49FF"/>
+            </svg>
+          .card-portfolio-grid__info 
+            span.card-portfolio-grid__title Площадь
+            span.card-portfolio-grid__value 89.50 м²
+        li.card-portfolio-grid__item
+          .card-portfolio-grid__icon 
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.5 15H17V13.5M15.5 9H17V10.5M8.5 9H7V10.5M7 13.5V15H8.5M12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14ZM6 7H18C18.5523 7 19 7.44772 19 8V16C19 16.5523 18.5523 17 18 17H6C5.44772 17 5 16.5523 5 16V8C5 7.44772 5.44772 7 6 7Z" stroke="#6F49FF"/>
+            </svg>
+          .card-portfolio-grid__info 
+            span.card-portfolio-grid__title Стоимость
+            span.card-portfolio-grid__value 9 650 000 руб
+        li.card-portfolio-grid__item
+          .card-portfolio-grid__icon 
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.5 17.5H14M17.5 17.5L17.5 14M17.5 17.5L13.5 13.5M14 5.5H17.5M17.5 5.5V9M17.5 5.5L13.5 9.5M9 5.5H5.5M5.5 5.5V9M5.5 5.5L9.5 9.5M5.5 14V17.5M5.5 17.5H9M5.5 17.5L9.5 13.5" stroke="#6F49FF"/>
+            </svg>
+          .card-portfolio-grid__info 
+            span.card-portfolio-grid__title Масштаб
+            span.card-portfolio-grid__value 9.50 х 6.30 м
+        li.card-portfolio-grid__item
+          .card-portfolio-grid__icon 
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.5 5.5L11.697 5.04043C11.5712 4.98652 11.4288 4.98652 11.303 5.04043L11.5 5.5ZM4.5 8.5L4.30304 8.04043C4.1192 8.11922 4 8.29999 4 8.5C4 8.70001 4.1192 8.88078 4.30304 8.95957L4.5 8.5ZM11.5 11.5L11.303 11.9596C11.4288 12.0135 11.5712 12.0135 11.697 11.9596L11.5 11.5ZM18.5 8.5L18.697 8.95957C18.8808 8.88078 19 8.70001 19 8.5C19 8.29999 18.8808 8.11922 18.697 8.04043L18.5 8.5ZM11.5 14.5L11.303 14.9596L11.5 15.044L11.697 14.9596L11.5 14.5ZM11.5 17.5L11.303 17.9596L11.5 18.044L11.697 17.9596L11.5 17.5ZM11.303 5.04043L4.30304 8.04043L4.69696 8.95957L11.697 5.95957L11.303 5.04043ZM4.30304 8.95957L11.303 11.9596L11.697 11.0404L4.69696 8.04043L4.30304 8.95957ZM11.697 11.9596L18.697 8.95957L18.303 8.04043L11.303 11.0404L11.697 11.9596ZM18.697 8.04043L11.697 5.04043L11.303 5.95957L18.303 8.95957L18.697 8.04043ZM4.30304 11.9596L11.303 14.9596L11.697 14.0404L4.69696 11.0404L4.30304 11.9596ZM11.697 14.9596L18.697 11.9596L18.303 11.0404L11.303 14.0404L11.697 14.9596ZM4.30304 14.9596L11.303 17.9596L11.697 17.0404L4.69696 14.0404L4.30304 14.9596ZM11.697 17.9596L18.697 14.9596L18.303 14.0404L11.303 17.0404L11.697 17.9596Z" fill="#6F49FF"/>
+            </svg>
+          .card-portfolio-grid__info 
+            span.card-portfolio-grid__title Материалы
+            span.card-portfolio-grid__value Кирпич, панель
+      .card-portfolio__btns
+        a.card-portfolio__btn.secondary-btn(href="#") Смотреть подробнее
+        a.card-portfolio__btn.primary-btn(href="#") Полное портфолио
+    .card-portfolio__col.card-portfolio-slider.photo__slider.swiper-container
+      ul.card-portfolio-slider__wrapper.swiper-wrapper
+        li.card-portfolio-slider__item.swiper-slide
+          picture.card-portfolio__picture
+            source(type="image/webp" srcset="images/house.jpg")
+            img.card-portfolio__img(src="images/house.jpg" alt="Каркасный дом по индивидуальному проекту")
+        li.card-portfolio-slider__item.swiper-slide
+          picture.card-portfolio__picture
+            source(type="image/webp" srcset="images/house.jpg")
+            img.card-portfolio__img(src="images/house.jpg" alt="Каркасный дом по индивидуальному проекту")
+        li.card-portfolio-slider__item.swiper-slide
+          picture.card-portfolio__picture
+            source(type="image/webp" srcset="images/house.jpg")
+            img.card-portfolio__img(src="images/house.jpg" alt="Каркасный дом по индивидуальному проекту")
+        li.card-portfolio-slider__item.swiper-slide
+          picture.card-portfolio__picture
+            source(type="image/webp" srcset="images/house.jpg")
+            img.card-portfolio__img(src="images/house.jpg" alt="Каркасный дом по индивидуальному проекту")
+        li.card-portfolio-slider__item.swiper-slide
+          picture.card-portfolio__picture
+            source(type="image/webp" srcset="images/house.jpg")
+            img.card-portfolio__img(src="images/house.jpg" alt="Каркасный дом по индивидуальному проекту")
+      .swiper-pagination

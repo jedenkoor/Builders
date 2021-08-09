@@ -1,0 +1,64 @@
+.stages {
+  counter-reset: stages;
+  &__container {
+    display: flex;
+    padding: 0;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0;
+    flex: 1;
+    padding-left: 0;
+    list-style: none;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+  }
+  &-item {
+    &__icon {
+      position: relative;
+      display: flex;
+      margin-right: 20px;
+      padding: 9px 9px 9px 51px;
+      background: var(--violet-blue-light-light);
+      border-radius: 6px;
+      &:before {
+        position: absolute;
+        left: 15px;
+        counter-increment: stages;
+        content: counter(stages);
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 24px;
+        color: var(--violet-blue);
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1px;
+        height: 24px;
+        background-color: var(--violet-blue-light);
+      }
+    }
+    &__title {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+  &__picture {
+    padding: 40px;
+    border-left: 1px solid var(--neutral-10);
+  }
+  &__img {
+    width: 358px;
+    height: 288px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+}

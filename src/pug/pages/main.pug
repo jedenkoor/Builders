@@ -1,0 +1,152 @@
+extends ../template
+
+block variables
+  - var title = 'Главная'
+  - var breadcrumbs = 0
+
+block content
+  section.banner 
+    .banner__container.container 
+      .banner__content 
+        h1.banner__title Готовые дома за 2&nbsp;месяца 
+          span «под ключ»
+        p.banner__text Было всего без четверти десять, когда мы вернулись в общежитие броссар обожал бридж и пошел
+        .banner__btns
+          a.banner__btn.secondary-btn(href="#") Выбрать проект
+          button.banner__btn.primary-btn Оформить заявку
+      picture.banner__picture
+        source(type="image/webp" srcset="images/house.jpg")
+        img.banner__img(src="images/house.jpg" alt="Готовые дома за 2 месяца «под ключ»")
+
+  section.projects-slider
+    .projects-slider__top
+      .projects-slider__container.section-top.container
+        h2.title Проекты
+        .projects-slider__row 
+          ul.projects-slider__tags
+            li.projects-slider__tag 
+              label
+                input.visually-hidden(type="radio" name="projects" checked)
+                span Все проекты
+            li.projects-slider__tag 
+              label
+                input.visually-hidden(type="radio" name="projects")
+                span Каркасные дома
+            li.projects-slider__tag 
+              label
+                input.visually-hidden(type="radio" name="projects")
+                span Кирпичные дома
+            li.projects-slider__tag 
+              label
+                input.visually-hidden(type="radio" name="projects")
+                span Дома из панели
+            li.projects-slider__tag 
+              label
+                input.visually-hidden(type="radio" name="projects")
+                span Деревянные бани
+          a.projects-slider__all(href="#") Смотреть все
+    .projects-slider__content.border-block
+      .projects-slider__wrapper.container
+        .projects-slider__swiper.swiper-container
+          ul.projects-slider__list.swiper-wrapper
+            li.projects-slider__item.swiper-slide
+              include ../includes/card-project.pug
+            li.projects-slider__item.swiper-slide
+              include ../includes/card-project.pug
+            li.projects-slider__item.swiper-slide
+              include ../includes/card-project.pug
+            li.projects-slider__item.swiper-slide
+              include ../includes/card-project.pug
+        .swiper-button-prev
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 12L10 8M6 12L10 16M6 12H18.5" stroke="#151515"/>
+          </svg>
+        .swiper-button-next
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.5 12L14.5 8M18.5 12L14.5 16M18.5 12H6" stroke="#151515"/>
+          </svg>
+
+  section.portfolio
+    .section-top.padding-section.container
+      h2.title Наше портфолио
+    ul.border-block
+      include ../includes/card-portfolio.pug
+      include ../includes/card-portfolio.pug
+      include ../includes/card-portfolio.pug
+
+  section.stages
+    .section-top.padding-section.container
+      h2.title Этапы работы
+    .border-block
+      .stages__container.container
+        ul.stages__list
+          li.stages__item.stages-item  
+            .stages-item__icon 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 9.94995L7.57817 9.68151L7.5 9.80435V9.94995H8ZM10.6976 5.71085L11.1194 5.97929L10.6976 5.71085ZM13.3645 7.22085L12.9173 6.99724V6.99724L13.3645 7.22085ZM12 9.94995L11.5528 9.72634C11.4753 9.88133 11.4836 10.0654 11.5747 10.2128C11.6658 10.3602 11.8267 10.4499 12 10.4499V9.94995ZM19 14.9499L19.4 15.2499L19.5 15.1166V14.9499H19ZM16.6 18.1499L17 18.4499L16.6 18.1499ZM12.7816 5.21889L13.0388 4.79015L13.0388 4.79015L12.7816 5.21889ZM4.5 9.44995V19.4499H5.5V9.44995H4.5ZM8.42183 10.2184L11.1194 5.97929L10.2758 5.44241L7.57817 9.68151L8.42183 10.2184ZM12.9173 6.99724L11.5528 9.72634L12.4472 10.1736L13.8118 7.44445L12.9173 6.99724ZM12 10.4499H17V9.44995H12V10.4499ZM18.5 11.9499V14.9499H19.5V11.9499H18.5ZM18.6 14.6499L16.2 17.8499L17 18.4499L19.4 15.2499L18.6 14.6499ZM15 18.4499H10V19.4499H15V18.4499ZM8.5 16.9499V9.94995H7.5V16.9499H8.5ZM17 10.4499C17.8284 10.4499 18.5 11.1215 18.5 11.9499H19.5C19.5 10.5692 18.3807 9.44995 17 9.44995V10.4499ZM10 18.4499C9.17157 18.4499 8.5 17.7784 8.5 16.9499H7.5C7.5 18.3307 8.61929 19.4499 10 19.4499V18.4499ZM12.5243 5.64764C12.9878 5.92573 13.1591 6.51379 12.9173 6.99724L13.8118 7.44445C14.2872 6.49363 13.9504 5.33708 13.0388 4.79015L12.5243 5.64764ZM16.2 17.8499C15.9167 18.2277 15.4721 18.4499 15 18.4499V19.4499C15.7869 19.4499 16.5279 19.0795 17 18.4499L16.2 17.8499ZM11.1194 5.97929C11.4205 5.50626 12.0435 5.35917 12.5243 5.64764L13.0388 4.79015C12.0932 4.2228 10.8678 4.51209 10.2758 5.44241L11.1194 5.97929Z" fill="#6F49FF"/>
+              </svg>
+            .stages-item__title Согласование проекта
+          li.stages__item.stages-item  
+            .stages-item__icon 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 11.4954H8.5V12.4954H9V11.4954ZM15 12.4954H15.5V11.4954H15V12.4954ZM9.00054 14.4935L8.50054 14.4929L8.49946 15.4929L8.99946 15.4935L9.00054 14.4935ZM14.9995 15.5L15.4995 15.5005L15.5005 14.5005L15.0005 14.5L14.9995 15.5ZM9.00033 8.49738L8.50033 8.49705L8.49967 9.49705L8.99967 9.49738L9.00033 8.49738ZM12.9997 9.5L13.4997 9.50033L13.5003 8.50033L13.0003 8.5L12.9997 9.5ZM15 5L15.3536 4.64645L15.2071 4.5H15V5ZM18 8H18.5V7.79289L18.3536 7.64645L18 8ZM9 12.4954H15V11.4954H9V12.4954ZM8.99946 15.4935L14.9995 15.5L15.0005 14.5L9.00054 14.4935L8.99946 15.4935ZM8.99967 9.49738L12.9997 9.5L13.0003 8.5L9.00033 8.49738L8.99967 9.49738ZM17 18.5H7V19.5H17V18.5ZM6.5 18V6H5.5V18H6.5ZM7 5.5H15V4.5H7V5.5ZM17.5 8V18H18.5V8H17.5ZM14.6464 5.35355L17.6464 8.35355L18.3536 7.64645L15.3536 4.64645L14.6464 5.35355ZM7 18.5C6.72386 18.5 6.5 18.2761 6.5 18H5.5C5.5 18.8284 6.17157 19.5 7 19.5V18.5ZM17 19.5C17.8284 19.5 18.5 18.8284 18.5 18H17.5C17.5 18.2761 17.2761 18.5 17 18.5V19.5ZM6.5 6C6.5 5.72386 6.72386 5.5 7 5.5V4.5C6.17157 4.5 5.5 5.17157 5.5 6H6.5Z" fill="#6F49FF"/>
+              </svg>
+            .stages-item__title Подписание договора
+          li.stages__item.stages-item  
+            .stages-item__icon 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 17H19M4 19H19M6.5 8.5V7H8M15 7H16.5V8.5M6.5 11.5V13H8M15 13H16.5V11.5M11.5 12C10.3954 12 9.5 11.1046 9.5 10C9.5 8.89543 10.3954 8 11.5 8C12.6046 8 13.5 8.89543 13.5 10C13.5 11.1046 12.6046 12 11.5 12ZM5.5 5H17.5C18.0523 5 18.5 5.44772 18.5 6V14C18.5 14.5523 18.0523 15 17.5 15H5.5C4.94772 15 4.5 14.5523 4.5 14V6C4.5 5.44772 4.94772 5 5.5 5Z" stroke="#6F49FF"/>
+              </svg>
+            .stages-item__title Предоплата
+          li.stages__item.stages-item  
+            .stages-item__icon 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 12V7C18 5.89543 17.1046 5 16 5H8C6.89543 5 6 5.89543 6 7V12M18 12H6M18 12V14C18 15.1046 17.1046 16 16 16H13V18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18V16H8C6.89543 16 6 15.1046 6 14V12M10 5V9.5M12 5V7.5" stroke="#6F49FF"/>
+              </svg>
+            .stages-item__title Строительство
+          li.stages__item.stages-item  
+            .stages-item__icon 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 19L13 11M7 17L9 19M9 15L11 17M15.5 12C13.567 12 12 10.433 12 8.5C12 6.567 13.567 5 15.5 5C17.433 5 19 6.567 19 8.5C19 10.433 17.433 12 15.5 12Z" stroke="#6F49FF"/>
+              </svg>
+            .stages-item__title Сдача объектов
+          li.stages__item.stages-item  
+            .stages-item__icon 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.5 5L11.7236 4.55279C11.5828 4.4824 11.4172 4.4824 11.2764 4.55279L11.5 5ZM8.5 13V12.5H8V13H8.5ZM12.5 13H13V12.5H12.5V13ZM4 19.5H19V18.5H4V19.5ZM11.2764 4.55279L5.27639 7.55279L5.72361 8.44722L11.7236 5.44721L11.2764 4.55279ZM4 10.5H19V9.50001H4V10.5ZM17.7236 7.55279L11.7236 4.55279L11.2764 5.44721L17.2764 8.44722L17.7236 7.55279ZM5 10V19H6V10H5ZM17 10V19H18V10H17ZM9 19V13H8V19H9ZM8.5 13.5H12.5V12.5H8.5V13.5ZM12 13V19H13V13H12Z" fill="#6F49FF"/>
+              </svg>
+            .stages-item__title Заселение
+        picture.stages__picture
+          source(type="image/webp" srcset="images/house.jpg")
+          img.stages__img(src="images/house.jpg" alt="Этапы работы")
+
+  section.payment
+    .section-top.padding-section.container
+      h2.title Способы оплаты
+    .border-block
+      ul.payment__list.container
+        li.payment__item.payment-item
+          .payment-item__icon 
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 8L5 17C5 17.5523 5.44772 18 6 18L18 18C18.5523 18 19 17.5523 19 17V9C19 8.44772 18.5523 8 18 8L7.5 8M5 8V7C5 6.44772 5.44772 6 6 6H14C14.5523 6 15 6.44772 15 7V8L7.5 8M5 8L7.5 8M13.5 14H16.5" stroke="#151515"/>
+            </svg>
+          picture.payment-item__picture
+            source(type="image/webp" srcset="images/house.jpg")
+            img.payment-item__img(src="images/house.jpg" alt="Этапы работы")
+          .payment-item__info
+            h3.payment-item__title Наличный расчет
+            p.payment-item__text Равным образом рамки и место обучения кадров позволяет выполнять важные задания по разработке позиций, занимаемых
+        li.payment__item.payment-item
+          .payment-item__icon 
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 10H19M6.5 14H12.5M14.5 14H17.5M5 8L5 16C5 16.5523 5.44772 17 6 17L18 17C18.5523 17 19 16.5523 19 16V8C19 7.44772 18.5523 7 18 7L6 7C5.44772 7 5 7.44772 5 8Z" stroke="#151515"/>
+            </svg>
+          picture.payment-item__picture
+            source(type="image/webp" srcset="images/house.jpg")
+            img.payment-item__img(src="images/house.jpg" alt="Этапы работы")
+          .payment-item__info
+            h3.payment-item__title Безналичный расчет
+            p.payment-item__text Разнообразный и богатый опыт консультация с широким активом обеспечивает широкому кругу участие в формировании
+
+
+      

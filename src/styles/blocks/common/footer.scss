@@ -1,0 +1,170 @@
+.footer {
+  border-top: 1px solid var(--neutral-10);
+  &__container {
+    display: flex;
+  }
+  &__col {
+    padding-top: 40px;
+    &:first-child {
+      flex: 1;
+      border-right: 1px solid var(--neutral-10);
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: translateX(-40px);
+    width: calc(100% + 40px);
+    margin-top: 40px;
+    padding: 40px;
+    border-top: 1px solid var(--neutral-10);
+    .footer__link {
+      margin-bottom: 14px;
+    }
+  }
+  &__socials {
+    display: flex;
+    margin-top: 8px;
+    padding-left: 0;
+    list-style: none;
+  }
+  &-socials {
+    &__item {
+      &:not(:last-child) {
+        margin-right: 14px;
+      }
+    }
+    &__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      background-color: var(--violet-blue-light-light);
+      border-radius: 6px;
+      transition: background-color 0.2s;
+      @include hover {
+        &:hover,
+        &:focus {
+          background-color: var(--violet-blue);
+          path {
+            &[stroke] {
+              stroke: var(--neutral-14);
+            }
+            &[fill] {
+              fill: var(--neutral-14);
+            }
+          }
+        }
+      }
+      @include active {
+        &:active {
+          background-color: var(--violet-blue);
+          path {
+            &[stroke] {
+              stroke: var(--neutral-14);
+            }
+            &[fill] {
+              fill: var(--neutral-14);
+            }
+          }
+        }
+      }
+      path {
+        transition: 0.2s;
+      }
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 67px;
+    padding-left: 40px;
+  }
+  &-list {
+    &__col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &__title {
+      margin-bottom: 20px;
+      transition: color 0.2s;
+      @include hover {
+        &:hover,
+        &:focus {
+          color: var(--violet-blue);
+        }
+      }
+      @include active {
+        &:active {
+          color: var(--violet-blue);
+        }
+      }
+    }
+    &__link {
+      color: var(--neutral-6);
+      transition: color 0.2s;
+      @include hover {
+        &:hover,
+        &:focus {
+          color: var(--violet-blue);
+        }
+      }
+      @include active {
+        &:active {
+          color: var(--violet-blue);
+        }
+      }
+      &:not(:last-child) {
+        margin-bottom: 14px;
+      }
+    }
+  }
+  &__bot {
+    display: flex;
+    width: calc(100% + 40px);
+    margin-top: 40px;
+    padding: 30px 0 30px 40px;
+    border-top: 1px solid var(--neutral-10);
+    > * {
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+  }
+  &__copy {
+    color: var(--neutral-9);
+  }
+  &__link {
+    &:is(a) {
+      transition: color 0.2s;
+      @include hover {
+        &:hover,
+        &:focus {
+          color: var(--violet-blue);
+        }
+      }
+      @include active {
+        &:active {
+          color: var(--violet-blue);
+        }
+      }
+    }
+    a {
+      color: var(--violet-blue);
+      @include hover {
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+      @include active {
+        &:active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.banner {
+  border-bottom: 1px solid var(--neutral-10);
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    margin-top: 0;
+    margin-bottom: 22px;
+    font-family: 'Raleway';
+    font-weight: bold;
+    font-size: 61px;
+    line-height: 69px;
+    letter-spacing: 0.02em;
+    span {
+      color: var(--violet-blue);
+    }
+  }
+  &__text {
+    margin-bottom: 40px;
+    max-width: 400px;
+  }
+  &__btns {
+    display: flex;
+  }
+  &__btn {
+    padding: 14px 31px;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+  &__picture {
+    flex: 0 0 513px;
+    padding: 40px 0 40px 40px;
+    border-left: 1px solid var(--neutral-10);
+  }
+  &__img {
+    border-radius: 6px;
+  }
+}

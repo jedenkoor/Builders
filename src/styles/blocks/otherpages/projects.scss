@@ -1,0 +1,295 @@
+.projects {
+  overflow: hidden;
+  .border-block {
+    border-bottom: none;
+  }
+  &__top {
+    padding-bottom: 28px;
+  }
+  &__text {
+    max-width: 900px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    line-height: 19px;
+  }
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    list-style: none;
+  }
+  &-filters {
+    &__item {
+      position: relative;
+      margin-bottom: 12px;
+      &:not(:last-child) {
+        margin-right: 12px;
+      }
+      &.select--active {
+        .projects-filters__btn {
+          background-color: var(--violet-blue);
+          border: 1px solid var(--violet-blue);
+          color: var(--neutral-14);
+          &:after {
+            border-color: var(--neutral-14);
+            transform: scaleY(-1) translateY(-3px) rotate(-45deg);
+          }
+        }
+      }
+    }
+    &__btn {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      line-height: 19px;
+      color: var(--violet-blue);
+      padding: 9px 21px 9px 19px;
+      background-color: var(--violet-blue-light-light);
+      border-radius: 6px;
+      border: 1px solid transparent;
+      color: var(--violet-blue);
+      cursor: pointer;
+      transition: 0.2s;
+      white-space: nowrap;
+      @include hover {
+        &:hover,
+        &:focus {
+          border-color: var(--violet-blue);
+        }
+      }
+      @include active {
+        &:active {
+          border-color: var(--violet-blue);
+        }
+      }
+      &[filters-count]:before {
+        content: attr(filters-count);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+        border-radius: 4px;
+        background-color: var(--violet-blue);
+        font-size: 12px;
+        line-height: 16px;
+        color: var(--neutral-14);
+      }
+      &[filters-count]:after {
+        transform: rotate(45deg);
+      }
+      &:after {
+        content: '';
+        display: block;
+        width: 6px;
+        height: 6px;
+        margin-left: 15px;
+        transform: rotate(-45deg);
+        border-left: 1px solid var(--violet-blue);
+        border-bottom: 1px solid var(--violet-blue);
+        transition: 0.2s;
+      }
+    }
+    &__content {
+      position: absolute;
+      z-index: 2;
+      top: 100%;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      width: 368px;
+      padding: 40px;
+      background: var(--neutral-14);
+      box-shadow: 0px 15px 50px rgba(21, 21, 21, 0.06);
+      border-radius: 6px;
+    }
+    &-content {
+      &__item {
+        & + & {
+          margin-top: 20px;
+        }
+        input {
+          &:checked + span:after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--neutral-2);
+            border-radius: 2px;
+          }
+          @include hover {
+            &:focus + span {
+              color: var(--violet-blue);
+            }
+          }
+        }
+        span {
+          position: relative;
+          display: flex;
+          align-items: center;
+          white-space: nowrap;
+          cursor: pointer;
+          @include hover {
+            &:hover {
+              color: var(--violet-blue);
+            }
+          }
+          &:before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            margin-right: 12px;
+            border: 1px solid var(--neutral-2);
+            border-radius: 3px;
+          }
+        }
+      }
+      &__accept {
+        margin-top: 40px;
+        padding: 14px 0;
+      }
+    }
+  }
+  &__clear {
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+    margin-bottom: 2px;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--neutral-7);
+    cursor: pointer;
+    transition: color 0.2s;
+    @include hover {
+      &:hover,
+      &:focus {
+        color: var(--violet-blue);
+        path {
+          stroke: var(--violet-blue);
+        }
+      }
+    }
+    @include active {
+      &:active {
+        color: var(--violet-blue);
+        path {
+          stroke: var(--violet-blue);
+        }
+      }
+    }
+    svg {
+      margin-left: 10px;
+      path {
+        transition: stroke 0.2s;
+      }
+    }
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    padding: 0;
+    list-style: none;
+    &--completed {
+      display: block;
+      padding: 0;
+      list-style: none;
+      .card-portfolio:last-child {
+        border-bottom: 1px solid var(--neutral-10);
+      }
+    }
+  }
+  &__item {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -100vw;
+      height: 1px;
+      width: 200vw;
+      background-color: var(--neutral-10);
+    }
+    &:not(:nth-child(3n)) {
+      border-right: 1px solid var(--neutral-10);
+    }
+  }
+  &__pagination {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin-left: auto;
+    padding-top: 40px;
+    padding-left: 0;
+    list-style: none;
+  }
+  &-pagination {
+    &__item {
+      &:first-child {
+        margin-right: 30px;
+      }
+      &:last-child {
+        margin-left: 30px;
+      }
+      &:not(:first-child):not(:last-child):not(:nth-last-child(2)) {
+        margin-right: 21px;
+      }
+    }
+    &__link {
+      display: flex;
+      font-size: 14px;
+      line-height: 19px;
+      transition: color 0.2s;
+      &:is(a) {
+        @include hover {
+          &:hover,
+          &:focus {
+            color: var(--violet-blue);
+          }
+        }
+        @include active {
+          &:active {
+            border-color: var(--violet-blue);
+          }
+        }
+      }
+      &--active {
+        color: var(--violet-blue);
+      }
+      &--arr {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: var(--neutral-12);
+        &:is(a) {
+          @include hover {
+            &:hover,
+            &:focus {
+              path {
+                stroke: var(--violet-blue);
+              }
+            }
+          }
+          @include active {
+            &:active {
+              path {
+                stroke: var(--violet-blue);
+              }
+            }
+          }
+        }
+        path {
+          transition: stroke 0.2s;
+        }
+      }
+    }
+  }
+}
