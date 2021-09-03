@@ -1,0 +1,30 @@
+extends ../template
+
+block variables
+  - var title = 'Информация'
+
+block content
+  section.information
+    .container.section-top
+      h1.title Информация
+
+    .border-block 
+      .services__container.container
+        .services__col
+          ul.projects-slider__tags
+            li.projects-slider__tag 
+              a(href="#") 
+                span Этапы работы
+            li.projects-slider__tag 
+              a(href="#") 
+                span Частозадаваемые вопросы
+            li.projects-slider__tag 
+              a(href="#") 
+                span Гарантия
+            li.projects-slider__tag 
+              a(href="#") 
+                span Из чего мы строим
+        .services__col
+          picture.services__picture
+            source(type="image/webp" srcset="images/information.jpg")
+            img.services__img(src="images/information.jpg" alt="Информация")

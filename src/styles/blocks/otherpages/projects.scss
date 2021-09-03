@@ -5,6 +5,10 @@
   }
   &__top {
     padding-bottom: 28px;
+    @include w1023 {
+      padding: 0;
+      border: 0;
+    }
   }
   &__text {
     max-width: 900px;
@@ -12,17 +16,31 @@
     margin-bottom: 40px;
     font-size: 14px;
     line-height: 19px;
+    @include w1200 {
+      margin-top: 40px;
+    }
+    @include w1023 {
+      margin-bottom: 30px;
+      font-size: 12px;
+      line-height: 16px;
+    }
   }
   &__filters {
     display: flex;
     flex-wrap: wrap;
     padding-left: 0;
     list-style: none;
+    @include w1023 {
+      margin-bottom: 30px;
+    }
   }
   &-filters {
     &__item {
       position: relative;
       margin-bottom: 12px;
+      @include w1023 {
+        margin-bottom: 0;
+      }
       &:not(:last-child) {
         margin-right: 12px;
       }
@@ -35,6 +53,45 @@
             border-color: var(--neutral-14);
             transform: scaleY(-1) translateY(-3px) rotate(-45deg);
           }
+        }
+      }
+      &--filters {
+        display: none;
+        @include w1023 {
+          display: block !important;
+          margin-right: 0 !important;
+        }
+        svg {
+          margin-left: 10px;
+        }
+        .projects-filters__btn {
+          &:before {
+            display: none !important;
+          }
+          &:after {
+            display: none;
+          }
+          &[filters-count]:after {
+            content: attr(filters-count);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 17px;
+            height: 17px;
+            margin-left: 5px;
+            border-radius: 4px;
+            background-color: var(--violet-blue);
+            font-size: 12px;
+            line-height: 16px;
+            color: var(--neutral-14);
+            border: none;
+            transform: none;
+          }
+        }
+      }
+      &:not(.projects-filters__item--sort) {
+        @include w1023 {
+          display: none;
         }
       }
     }
@@ -52,6 +109,9 @@
       cursor: pointer;
       transition: 0.2s;
       white-space: nowrap;
+      @include w1023 {
+        padding: 7px 20px 7px 17px;
+      }
       @include hover {
         &:hover,
         &:focus {
@@ -77,9 +137,6 @@
         line-height: 16px;
         color: var(--neutral-14);
       }
-      &[filters-count]:after {
-        transform: rotate(45deg);
-      }
       &:after {
         content: '';
         display: block;
@@ -90,6 +147,11 @@
         border-left: 1px solid var(--violet-blue);
         border-bottom: 1px solid var(--violet-blue);
         transition: 0.2s;
+        @include w1023 {
+          width: 5px;
+          height: 5px;
+          margin-left: 13px;
+        }
       }
     }
     &__content {
@@ -104,6 +166,11 @@
       background: var(--neutral-14);
       box-shadow: 0px 15px 50px rgba(21, 21, 21, 0.06);
       border-radius: 6px;
+      @include w767 {
+        left: -24px;
+        width: 100vw;
+        padding: 24px;
+      }
     }
     &-content {
       &__item {
@@ -156,7 +223,7 @@
     }
   }
   &__clear {
-    display: flex;
+    display: none;
     align-items: center;
     margin-top: 18px;
     margin-bottom: 2px;
@@ -166,6 +233,10 @@
     color: var(--neutral-7);
     cursor: pointer;
     transition: color 0.2s;
+    @include w1023 {
+      margin-top: -8px;
+      margin-bottom: 22px;
+    }
     @include hover {
       &:hover,
       &:focus {
@@ -183,6 +254,9 @@
         }
       }
     }
+    &--active {
+      display: flex;
+    }
     svg {
       margin-left: 10px;
       path {
@@ -195,6 +269,12 @@
     grid-template-columns: repeat(3, 33.33%);
     padding: 0;
     list-style: none;
+    @include w1200 {
+      grid-template-columns: repeat(2, 50%);
+    }
+    @include w767 {
+      display: block;
+    }
     &--completed {
       display: block;
       padding: 0;
@@ -217,6 +297,17 @@
     }
     &:not(:nth-child(3n)) {
       border-right: 1px solid var(--neutral-10);
+      @include w1200 {
+        border-right: none;
+      }
+    }
+    &:not(:nth-child(2n)) {
+      @include w1200 {
+        border-right: 1px solid var(--neutral-10);
+      }
+      @include w767 {
+        border-right: none;
+      }
     }
   }
   &__pagination {
@@ -227,17 +318,49 @@
     padding-top: 40px;
     padding-left: 0;
     list-style: none;
+    @include w1023 {
+      padding-top: 22px;
+    }
+    @include w767 {
+      width: 100%;
+      justify-content: space-between;
+    }
   }
   &-pagination {
+    &__wrap {
+      @include w767 {
+        padding-left: 0;
+        padding-right: 0;
+        border: none;
+      }
+    }
     &__item {
       &:first-child {
         margin-right: 30px;
+        @include w1023 {
+          margin-right: 23px;
+        }
+        @include w767 {
+          margin-right: 0;
+        }
       }
       &:last-child {
         margin-left: 30px;
+        @include w1023 {
+          margin-left: 23px;
+        }
+        @include w767 {
+          margin-left: 0;
+        }
       }
       &:not(:first-child):not(:last-child):not(:nth-last-child(2)) {
         margin-right: 21px;
+        @include w1023 {
+          margin-right: 14px;
+        }
+        @include w767 {
+          margin-right: 0;
+        }
       }
     }
     &__link {

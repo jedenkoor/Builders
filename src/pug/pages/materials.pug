@@ -1,0 +1,56 @@
+extends ../template
+
+block variables
+  - var title = 'Из чего мы строим?'
+
+block content
+  section.materials
+    .container.section-top
+      h1.title Из чего мы строим?
+
+    .border-block.materials__border
+      .materials__container.container
+        .materials__col
+          .materials__text
+            h3 Описание
+            p Разнообразный и богатый опыт постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения направлений прогрессивного развития. Не следует, однако забывать, что дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнять важные задания по разработке систем массового участия.
+          .materials-list__wrap
+            ul.materials__list.materials-list
+              li.materials-list__item За какое время может быть построен хороший дом или баня из бруса?
+              li.materials-list__item Разнообразный и богатый опыт постоянное обеспечение
+              li.materials-list__item Различных форм деятельности обеспечивает широкому
+              li.materials-list__item Широкому кругу участие формировании позиций
+              li.materials-list__item За какое время может быть построен хороший дом или баня из бруса?
+              li.materials-list__item Разнообразный и богатый опыт постоянное обеспечение
+              li.materials-list__item Различных форм деятельности обеспечивает широкому
+              li.materials-list__item
+              li.materials-list__item За какое время может быть построен хороший дом или баня
+              li.materials-list__item
+            
+        .materials__col
+          ul.projects-slider__tags
+            li.projects-slider__tag 
+              label
+                input.visually-hidden(type="radio" name="materials")
+                span Клееный брус
+            li.projects-slider__tag 
+              label
+                input.visually-hidden(type="radio" name="materials")
+                span СИП-панели
+            li.projects-slider__tag 
+              label
+                input.visually-hidden(type="radio" name="materials")
+                span Газобетоп
+            li.projects-slider__tag 
+              label
+                input.visually-hidden(type="radio" name="materials")
+                span Фахверк
+            li.projects-slider__tag 
+              label
+                input.visually-hidden(type="radio" name="materials" checked)
+                span Кирпич
+            li.projects-slider__tag 
+              label
+                input.visually-hidden(type="radio" name="materials")
+                span Каркасная технология
+          a.materials__btn.primary-btn(href="#") Проекты из этого материала

@@ -1,0 +1,18 @@
+.text {
+  @include w1200 {
+    position: relative;
+    z-index: 1;
+    margin-bottom: -140px;
+    padding-bottom: 140px;
+    background-color: var(--neutral-14);
+  }
+  &__container {
+    @include w1200 {
+      padding: 0;
+      border: none;
+    }
+  }
+  &__content {
+    max-width: 712px;
+  }
+}

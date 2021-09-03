@@ -1,17 +1,46 @@
 .projects-slider {
   &__container {
     padding-top: 120px;
+    @include w1200 {
+      padding-top: 100px;
+    }
   }
   &__row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 60px;
+    @include w1200 {
+      display: block;
+      margin-top: 40px;
+      margin-bottom: -21px;
+    }
   }
   &__tags {
     display: flex;
     padding-left: 0;
     list-style: none;
+    @include w1200 {
+      transform: translateX(-40px);
+      width: 100vw;
+      margin-bottom: 10px;
+      padding-bottom: 11px;
+      padding-left: 40px;
+      overflow-x: auto;
+    }
+    @include w767 {
+      transform: translateX(-24px);
+      padding-left: 24px;
+    }
+    &:after {
+      @include w1200 {
+        content: '';
+        flex: 0 0 40px;
+      }
+      @include w767 {
+        flex: 0 0 24px;
+      }
+    }
   }
   &__tag {
     &:not(:last-child) {
@@ -32,6 +61,10 @@
       color: var(--violet-blue);
       cursor: pointer;
       transition: 0.2s;
+      white-space: nowrap;
+      @include w1023 {
+        padding: 7px 17px;
+      }
       @include hover {
         &:hover {
           border-color: var(--violet-blue);
@@ -66,11 +99,26 @@
   &__wrapper {
     position: relative;
     padding: 0;
+    .swiper-button-next,
+    .swiper-button-prev {
+      @include w767 {
+        top: auto;
+        bottom: -59px;
+        transform: none;
+      }
+    }
     .swiper-button-next {
-      right: -40px;
+      right: -33px;
+      @include w767 {
+        right: -1px;
+      }
     }
     .swiper-button-prev {
-      left: -40px;
+      left: -33px;
+      @include w767 {
+        right: 51px;
+        left: auto;
+      }
     }
   }
   &__swiper {

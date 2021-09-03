@@ -37,12 +37,20 @@ class Init {
         const nextArr = el.querySelector('.swiper-button-next')
         ;(() =>
           new Swiper(swiper, {
-            slidesPerView: 3,
+            slidesPerView: 1,
             resistanceRatio: 0,
             threshold: 5,
             navigation: {
               prevEl: prevArr,
               nextEl: nextArr
+            },
+            breakpoints: {
+              768: {
+                slidesPerView: 2
+              },
+              1200: {
+                slidesPerView: 3
+              }
             }
           }))()
       },
@@ -70,7 +78,15 @@ class Init {
           slidesPerView: 5,
           resistanceRatio: 0,
           threshold: 5,
-          spaceBetween: 20
+          spaceBetween: 10,
+          breakpoints: {
+            768: {
+              spaceBetween: 14
+            },
+            1200: {
+              spaceBetween: 20
+            }
+          }
         })
         ;(() =>
           new Swiper(slider, {

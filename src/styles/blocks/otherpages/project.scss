@@ -1,15 +1,39 @@
 .project {
+  .border-block {
+    @include w767 {
+      border-top: none;
+    }
+  }
   &__container {
     display: grid;
     grid-template-columns: 58% 42%;
     padding: 0;
+    @include w1023 {
+      display: block;
+    }
+    @include w767 {
+      border: none;
+      max-width: 100%;
+    }
   }
   &__gallery {
     padding: 40px;
+    @include w1200 {
+      padding: 22px 24px;
+    }
+    @include w767 {
+      padding: 0 24px 22px;
+    }
   }
   &-gallery {
     &__slider {
       margin-bottom: 20px;
+      @include w1200 {
+        margin-bottom: 14px;
+      }
+      @include w767 {
+        margin-bottom: 10px;
+      }
     }
     &-slider {
       &__wrapper {
@@ -21,6 +45,12 @@
         height: 531px;
         object-fit: cover;
         border-radius: 6px;
+        @include w1200 {
+          height: 498px;
+        }
+        @include w767 {
+          height: 241px;
+        }
       }
     }
     &-thumbs {
@@ -33,17 +63,45 @@
         height: 89px;
         object-fit: cover;
         border-radius: 6px;
+        @include w1200 {
+          height: 86px;
+        }
+        @include w767 {
+          height: 40px;
+        }
       }
     }
   }
   &__info {
     border-left: 1px solid var(--neutral-10);
+    @include w1023 {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--neutral-10);
+      border-left: none;
+    }
+    @include w767 {
+      display: block;
+    }
   }
   &-info {
     &__wrap {
       padding: 40px;
+      @include w1200 {
+        padding: 22px;
+      }
+      @include w767 {
+        padding: 22px 24px;
+      }
       &:not(:last-child) {
         border-bottom: 1px solid var(--neutral-10);
+        @include w1023 {
+          border-bottom: none;
+        }
+        @include w767 {
+          border-bottom: 1px solid var(--neutral-10);
+        }
       }
     }
     &__title {
@@ -54,11 +112,19 @@
       font-size: 28px;
       line-height: 33px;
       letter-spacing: 0.01em;
+      @include w1023 {
+        margin-bottom: 12px;
+        font-size: 20px;
+        line-height: 23px;
+      }
     }
     &__row {
       display: flex;
       & + & {
         margin-top: 14px;
+        @include w1023 {
+          margin-top: 12px;
+        }
       }
       span {
         font-size: 14px;
@@ -76,12 +142,35 @@
       width: 100%;
       margin-top: 40px;
       padding: 14px 0;
+      @include w1023 {
+        position: absolute;
+        z-index: 3;
+        bottom: -61px;
+        left: 22px;
+        width: calc(100% - 44px);
+        padding: 10px 0;
+      }
+      @include w767 {
+        left: 24px;
+        width: calc(100% - 48px);
+      }
     }
   }
   &-content {
     &__top {
       padding-top: 80px;
       padding-bottom: 40px;
+      @include w1200 {
+        padding-bottom: 1px;
+      }
+      @include w1023 {
+        padding-top: 110px;
+      }
+      @include w767 {
+        padding-right: 0;
+        padding-left: 0;
+        border: none;
+      }
     }
     &__title {
       margin-top: 0;
@@ -91,9 +180,14 @@
       font-size: 42px;
       line-height: 49px;
       letter-spacing: 0.02em;
+      @include w1023 {
+        margin-bottom: 22px;
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: 0.01em;
+      }
     }
     &__text {
-      margin-bottom: -40px;
       ul,
       ol {
         padding-left: 17px;
@@ -114,11 +208,24 @@
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
+      @include w767 {
+        display: block;
+        margin-bottom: 22px;
+      }
     }
     &__price {
       font-weight: bold;
       font-size: 18px;
       line-height: 24px;
+      white-space: nowrap;
+      @include w1200 {
+        margin-bottom: 18px;
+      }
+      @include w1023 {
+        margin-bottom: 29px;
+        font-size: 16px;
+        line-height: 22px;
+      }
     }
     &__main {
       border-top: 1px solid var(--neutral-10);
@@ -129,20 +236,63 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         padding: 0;
+        @include w767 {
+          max-width: 100%;
+          border: none;
+          overflow-x: auto;
+        }
       }
       &__bot {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
         padding-top: 40px;
+        @include w1023 {
+          align-items: center;
+          padding-top: 23px;
+        }
+        @include w767 {
+          position: relative;
+          max-width: 100%;
+          border: none;
+        }
+        &:after {
+          @include w767 {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--neutral-10);
+          }
+        }
+        .project-content__price {
+          margin-bottom: 0;
+        }
       }
       &__btn {
         padding: 14px 44px;
+        @include w1023 {
+          padding: 10px 34px;
+        }
+        @include w767 {
+          padding: 10px 24px;
+        }
       }
     }
     &__item {
       position: relative;
       padding: 40px 40px 41px 92px;
+      @include w1200 {
+        padding: 22px 22px 22px 74px;
+      }
+      @include w1023 {
+        padding: 59px 22px 22px 22px;
+      }
+      @include w767 {
+        width: 228px;
+      }
       &:before {
         content: '';
         position: absolute;
@@ -151,6 +301,14 @@
         width: 32px;
         height: 32px;
         background: url('../images/icon-projects-ok.svg') center/contain no-repeat;
+        @include w1200 {
+          top: 22px;
+          left: 22px;
+        }
+        @include w1023 {
+          width: 26px;
+          height: 26px;
+        }
       }
       &:after {
         content: '';
@@ -160,9 +318,18 @@
         width: 200vw;
         height: 1px;
         background-color: var(--neutral-10);
+        @include w767 {
+          left: 0;
+          width: 100%;
+        }
       }
       &:nth-child(3n):before {
         background: url('../images/icon-projects-notok.svg') center/contain no-repeat;
+      }
+      &:nth-child(3n + 1) {
+        @include w767 {
+          padding-left: 24px;
+        }
       }
       &:nth-child(3n + 1),
       &:nth-child(3n + 2) {
@@ -178,6 +345,11 @@
         font-size: 24px;
         line-height: 28px;
         letter-spacing: 0.01em;
+        @include w1200 {
+          padding: 22px;
+          font-size: 17px;
+          line-height: 20px;
+        }
         &:before {
           display: none;
         }

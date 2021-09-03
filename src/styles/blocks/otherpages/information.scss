@@ -1,0 +1,21 @@
+.information {
+  .projects-slider {
+    &__tags {
+      flex-wrap: wrap;
+      max-width: 420px;
+      @include w1200 {
+        max-width: calc(100% + 40px);
+        transform: translateX(-22px);
+        padding-left: 22px;
+      }
+      @include w767 {
+        width: calc(100% + 40px);
+        margin-bottom: -12px;
+        padding-bottom: 0;
+      }
+    }
+    &__tag {
+      margin-bottom: 12px;
+    }
+  }
+}

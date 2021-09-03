@@ -1,3 +1,8 @@
+.portfolio {
+  @include w767 {
+    margin-top: 59px;
+  }
+}
 .card-portfolio {
   &:not(:last-child) {
     border-bottom: 1px solid var(--neutral-10);
@@ -5,6 +10,9 @@
   &__container {
     display: flex;
     padding: 0;
+    @include w767 {
+      flex-direction: column-reverse;
+    }
   }
   &__col {
     &:first-child {
@@ -12,10 +20,29 @@
       flex-direction: column;
       padding: 40px;
       border-right: 1px solid var(--neutral-10);
+      @include w1023 {
+        padding: 22px;
+      }
+      @include w767 {
+        padding-top: 8px;
+        border-right: none;
+      }
     }
     &:last-child {
       flex: 0 0 472px;
       margin: 40px;
+      @include w1200 {
+        flex: 0 0 38.48%;
+      }
+      @include w1023 {
+        margin: 22px;
+        flex: 0 0 32.1%;
+        align-self: flex-start;
+      }
+      @include w767 {
+        flex: initial;
+        width: calc(100% - 44px);
+      }
     }
   }
   &__title {
@@ -26,9 +53,26 @@
     font-size: 28px;
     line-height: 33px;
     letter-spacing: 0.01em;
+    @include w1023 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      line-height: 23px;
+    }
   }
   &__text {
     margin-bottom: 35px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    @include w1023 {
+      margin-bottom: 20px;
+      -webkit-line-clamp: 4;
+    }
+    @include w767 {
+      font-size: 16px;
+      line-height: 22px;
+    }
   }
   &__grid {
     display: grid;
@@ -38,6 +82,15 @@
     margin-bottom: 40px;
     padding-left: 0;
     list-style: none;
+    @include w1023 {
+      grid-gap: 16px 30px;
+      margin-bottom: 30px;
+    }
+    @include w767 {
+      grid-template-columns: auto;
+      grid-gap: 19px;
+      margin-bottom: 29px;
+    }
   }
   &-grid {
     &__item {
@@ -53,6 +106,11 @@
       margin-right: 14px;
       background-color: var(--violet-blue-light-light);
       border-radius: 6px;
+      @include w1023 {
+        width: 38px;
+        height: 38px;
+        margin-right: 12px;
+      }
     }
     &__title {
       display: block;
@@ -69,11 +127,27 @@
   &__btns {
     display: flex;
     margin-top: auto;
+    @include w767 {
+      display: block;
+    }
   }
   &__btn {
     padding: 14px 31px;
+    @include w1023 {
+      padding: 10px 36px;
+    }
+    @include w767 {
+      width: 100%;
+    }
     &:not(:last-child) {
       margin-right: 21px;
+      @include w1023 {
+        margin-right: 12px;
+      }
+      @include w767 {
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
     }
   }
   &-slider {
@@ -88,5 +162,12 @@
     min-height: 366px;
     object-fit: cover;
     border-radius: 6px;
+    @include w1023 {
+      min-height: auto;
+      height: 170px;
+    }
+    @include w767 {
+      height: 206px;
+    }
   }
 }

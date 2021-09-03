@@ -1,0 +1,91 @@
+extends ../template
+
+block variables
+  - var title = 'Контакты'
+
+block content
+  section.contacts
+    .container.section-top
+      h1.title Контакты
+
+    .border-block 
+      .contacts__container.container
+        ul.contacts__list
+          li.contacts__item.contacts-item  
+            .contacts-item__icon 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 12.9948C13.104 12.9948 14 12.0993 14 10.9961C14 9.89278 13.104 8.99738 12 8.99738C10.896 8.99738 10 9.89278 10 10.9961C10 12.0993 10.896 12.9948 12 12.9948Z" stroke="#6F49FF" stroke-linecap="square"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10.9961C18 15.9928 13 18.9909 12 18.9909C11 18.9909 6 15.9928 6 10.9961C6 7.68522 8.687 5 12 5C15.313 5 18 7.68522 18 10.9961Z" stroke="#6F49FF" stroke-linecap="square"/>
+              </svg>
+            .contacts-item__info 
+              span.contacts-item__title Адрес
+              p.contacts-item__value Свечной переулок, 7/11, Санкт&nbsp;-&nbsp;Петербург, Россия, 191002
+          li.contacts__item.contacts-item  
+            .contacts-item__icon 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.5 11.5H11C11 11.6326 11.0527 11.7598 11.1464 11.8536L11.5 11.5ZM11.5 18C7.91015 18 5 15.0899 5 11.5H4C4 15.6421 7.35786 19 11.5 19V18ZM18 11.5C18 15.0899 15.0899 18 11.5 18V19C15.6421 19 19 15.6421 19 11.5H18ZM11.5 5C15.0899 5 18 7.91015 18 11.5H19C19 7.35786 15.6421 4 11.5 4V5ZM11.5 4C7.35786 4 4 7.35786 4 11.5H5C5 7.91015 7.91015 5 11.5 5V4ZM11 7V11.5H12V7H11ZM11.1464 11.8536L14.1464 14.8536L14.8536 14.1464L11.8536 11.1464L11.1464 11.8536Z" fill="#6F49FF"/>
+              </svg>
+            .contacts-item__info 
+              span.contacts-item__title Рабочее время
+              p.contacts-item__value Понедельник-пятница, 09:00-20:00
+          li.contacts__item.contacts-item  
+            .contacts-item__icon 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 9L12 13L19 9M6 6H18C18.5523 6 19 6.44772 19 7V17C19 17.5523 18.5523 18 18 18H6C5.44772 18 5 17.5523 5 17V7C5 6.44772 5.44772 6 6 6Z" stroke="#6F49FF"/>
+              </svg>
+            .contacts-item__info 
+              span.contacts-item__title E-mail
+              a.contacts-item__value(href="#") growthpoint@gmail.com
+          li.contacts__item.contacts-item  
+            .contacts-item__icon 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.21922 5H7C5.89543 5 5 5.89543 5 7V9C5 14.5228 9.47715 19 15 19H17C18.1046 19 19 18.1046 19 17V15.618C19 15.2393 18.786 14.893 18.4472 14.7236L16.0313 13.5156C15.487 13.2435 14.8278 13.5165 14.6354 14.0938L14.3376 14.9871C14.1447 15.5658 13.5512 15.9102 12.9531 15.7906C10.5593 15.3119 8.68814 13.4407 8.20938 11.0469C8.08976 10.4488 8.43422 9.85526 9.01286 9.66238L10.1215 9.29284C10.6172 9.1276 10.9021 8.60855 10.7754 8.10162L10.1894 5.75746C10.0781 5.3123 9.67809 5 9.21922 5Z" stroke="#6F49FF"/>
+              </svg>
+            .contacts-item__info 
+              span.contacts-item__title Телефон, WhatsApp, Viber
+              a.contacts-item__value(href="#") +7 (455) 67-44-41
+          li.contacts__item.contacts-item  
+            .contacts-item__icon 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.5 5.5L4.5 10.5L8.5 12.5L14.5 8.5L10.5 13.5L16.5 17.5L18.5 5.5Z" stroke="#6F49FF" stroke-linejoin="round"/>
+              </svg>
+            .contacts-item__info 
+              span.contacts-item__title Telegram
+              a.contacts-item__value(href="#") growthpoint
+          li.contacts__item.contacts-item  
+            .contacts-item__icon 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 7.5H16M8.5 4.5H14.5C16.7091 4.5 18.5 6.29086 18.5 8.5V14.5C18.5 16.7091 16.7091 18.5 14.5 18.5H8.5C6.29086 18.5 4.5 16.7091 4.5 14.5V8.5C4.5 6.29086 6.29086 4.5 8.5 4.5ZM11.5 14.5C9.84315 14.5 8.5 13.1569 8.5 11.5C8.5 9.84315 9.84315 8.5 11.5 8.5C13.1569 8.5 14.5 9.84315 14.5 11.5C14.5 13.1569 13.1569 14.5 11.5 14.5Z" stroke="#6F49FF"/>
+              </svg>
+            .contacts-item__info 
+              span.contacts-item__title Instagram
+              a.contacts-item__value(href="#") growthpoint
+        .contacts__map
+          <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A94c2e425b9f6fbfeb768d4c23d72267d20ddd9e297ae0b866cf1f03d4c2290d5&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
+
+    .container.section-top.padding-section
+      h2.title Реквизиты
+    .contacts__requisites
+      .contacts__row.container
+        span Юридический адрес
+        span 125363, г. Москва, р-н Южное Тушино, ул. Фабрициуса, д.38, к.1, кв.3
+      .contacts__row.container
+        span ИНН
+        span 345652435673
+      .contacts__row.container
+        span ОГРНИП
+        span 456738293048506
+      .contacts__row.container
+        span Р/С
+        span 232556538960984583076
+      .contacts__row.container
+        span Банк
+        span АО «Тинькофф»
+      .contacts__row.container
+        span К/С банка
+        span 465678742137451723818
+      .contacts__row.container
+        span БИК банка
+        span 364758693
+        
+

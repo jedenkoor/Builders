@@ -1,0 +1,59 @@
+extends ../template
+
+block variables
+  - var title = 'Гарантия на строительство'
+
+block content
+  section.guarantee
+    .container.section-top
+      h1.title Гарантия на строительство
+
+    .border-block 
+      .services__container.container
+        .services__col
+          .guarantee__block
+            h3 Гарантия распространяется на:
+            p Наша компания предоставляет гарантию на все работы по строительству домов, бань.
+            ol 
+              li Герметичность крыш
+              li Целостность отдельных элементов 
+              li Целостность конструкции в целом
+              li Несоблюдение отдельных <a href="#">требований ГОСТов</a> во время строительства
+              li Превышение 5-ти процентного порога усадки конструкции из бруса
+            button.secondary-btn Сообщить о гарантийном случае
+          .guarantee__block
+            h3 Сроки гарантии
+            ul.guarantee__list
+              li.guarantee__item.guarantee-item
+                picture.guarantee-item__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.guarantee-item__img(src="images/house.jpg" alt="Дома из бруса")
+                span Дома из бруса
+                span 1 год
+              li.guarantee__item.guarantee-item
+                picture.guarantee-item__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.guarantee-item__img(src="images/house.jpg" alt="Коттеджи из бруса")
+                span Коттеджи из бруса
+                span 1 год
+              li.guarantee__item.guarantee-item
+                picture.guarantee-item__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.guarantee-item__img(src="images/house.jpg" alt="Коттеджи из каркаса")
+                span Коттеджи из каркаса
+                span 1 год
+              li.guarantee__item.guarantee-item
+                picture.guarantee-item__picture
+                  source(type="image/webp" srcset="images/house.jpg")
+                  img.guarantee-item__img(src="images/house.jpg" alt="Дома из каркаса")
+                span Дома из каркаса
+                span 1 год
+          .guarantee__block
+            p В случае обнаружения дефектов в течении действия гарантии, мы обязуемся их устранить абсолютно бесплатно в 14-ти дневный срок.
+            p Гарантийный срок, а также все гарантийные случаи прописываются в договоре, который мы подписываем со своими клиентами.
+            p В нашем штате находятся специальные бригады, единственная задача которых - обеспечение гарантийного и пост-гарантийного обслуживания наших клиентов. Безопасность и качество - основные приоритеты, которыми мы руководствуемся в своей деятельности по возведению загородной недвижимости.
+        .services__col
+          picture.services__picture
+            source(type="image/webp" srcset="images/guarantee.jpg")
+            img.services__img(src="images/guarantee.jpg" alt="Гарантия на строительство")
+          button.guarantee__btn.secondary-btn Сообщить о гарантийном случае

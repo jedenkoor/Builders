@@ -26,7 +26,7 @@
   --neutral-10: rgb(231, 231, 231);
   --neutral-11: rgba(21, 21, 21, 0.06);
   --neutral-12: rgba(21, 21, 21, 0.04);
-  --neutral-13: rgba(21, 21, 21, 0.02);
+  --neutral-13: rgb(250 250 250);
   --neutral-14: #ffffff;
   --neutral-opacity: rgba(21, 21, 21, 0.35);
   --neutral-light: rgba(255, 255, 255, 0.15);
@@ -48,7 +48,7 @@ img::-moz-selection {
   background-color: var(--img-selection-color);
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1201px) {
   ::-webkit-scrollbar {
     width: 4px;
   }
@@ -104,20 +104,26 @@ body {
 .content {
   z-index: 0;
   flex: 1;
+  & + .padding-section {
+    @include w767 {
+      border: none;
+    }
+  }
 }
 
 .container {
   width: 100%;
   max-width: 1320px;
   margin: 0 auto;
-  padding: $padding-container;
+  padding: 0 40px;
   border-right: 1px solid var(--neutral-10);
   border-left: 1px solid var(--neutral-10);
   @include w1400 {
     max-width: calc(100% - 80px);
+    padding: 0 22px;
   }
   @include w767 {
-    padding: $mobile-padding-container;
+    max-width: calc(100% - 48px);
   }
 }
 
@@ -130,8 +136,11 @@ body {
 
 .section-top {
   padding-bottom: 60px;
-  @include w1023 {
+  @include w1200 {
+    padding-right: 0;
     padding-bottom: 40px;
+    padding-left: 0;
+    border: none;
   }
 }
 
@@ -174,6 +183,20 @@ p {
 a {
   color: inherit;
   text-decoration: none;
+  &:not([class]) {
+    color: var(--violet-blue);
+    @include hover {
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+    @include active {
+      &:active {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 b {
@@ -217,6 +240,10 @@ input[type='number'] {
   font-size: 50px;
   line-height: 59px;
   letter-spacing: 0.02em;
+  @include w1200 {
+    font-size: 39px;
+    line-height: 46px;
+  }
   @include w1023 {
     font-size: 28px;
     line-height: 33px;
@@ -241,6 +268,11 @@ input[type='number'] {
   color: var(--neutral-14);
   transition: background 0.2s, border-color 0.2s;
   cursor: pointer;
+  letter-spacing: 0.01em;
+  @include w1023 {
+    font-size: 14px;
+    line-height: 16px;
+  }
   @include hover {
     &:hover,
     &:focus {
@@ -269,6 +301,11 @@ input[type='number'] {
   color: var(--orange);
   transition: background 0.2s;
   cursor: pointer;
+  letter-spacing: 0.01em;
+  @include w1023 {
+    font-size: 14px;
+    line-height: 16px;
+  }
   @include hover {
     &:hover,
     &:focus {
@@ -290,6 +327,12 @@ input[type='number'] {
       height: auto;
       margin-top: 0;
       transform: translateY(-50%);
+      @include w767 {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: var(--neutral-12);
+      }
       @include hover {
         &:hover,
         &:focus {
@@ -358,13 +401,69 @@ input[type='number'] {
   }
 }
 
+input[type='text'],
+textarea {
+  width: 100%;
+  border: none;
+  background: var(--neutral-13);
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--neutral-1);
+  transition: 0.2s;
+  &::placeholder {
+    color: var(--neutral-7);
+  }
+  &:hover,
+  &:focus {
+    border-color: var(--violet-blue);
+  }
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    box-shadow: 0 0 0px 1000px var(--neutral-13) inset;
+    -webkit-box-shadow: 0 0 0px 1000px var(--neutral-13) inset;
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: var(--neutral-1);
+  }
+  &.input-err {
+    border-color: var(--red);
+  }
+  &.input-border {
+    border-color: var(--violet-blue);
+  }
+}
+
+input[type='text'] {
+  height: 50px;
+  padding: 0 22px;
+}
+
+textarea {
+  height: 149px;
+  padding: 14px 22px;
+  resize: none;
+}
+
 @import 'blocks/common/header';
 @import 'blocks/common/footer';
 @import 'blocks/common/card-project';
 @import 'blocks/common/card-portfolio';
+@import 'blocks/common/form';
 @import 'blocks/mainpage/banner';
 @import 'blocks/mainpage/projects-slider';
 @import 'blocks/mainpage/stages';
 @import 'blocks/mainpage/payment';
 @import 'blocks/otherpages/projects';
 @import 'blocks/otherpages/project';
+@import 'blocks/otherpages/services';
+@import 'blocks/otherpages/contacts';
+@import 'blocks/otherpages/about';
+@import 'blocks/otherpages/materials';
+@import 'blocks/otherpages/information';
+@import 'blocks/otherpages/guarantee';
+@import 'blocks/otherpages/questions';
+@import 'blocks/otherpages/text';
+@import 'blocks/otherpages/404';

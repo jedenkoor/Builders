@@ -1,0 +1,119 @@
+.guarantee {
+  .services__col {
+    &:first-child {
+      padding: 0;
+    }
+  }
+  &__btn {
+    width: 100%;
+    margin-top: 22px;
+    padding: 14px 0;
+    @include w1023 {
+      display: none;
+    }
+  }
+  &__block {
+    position: relative;
+    padding: 40px;
+    @include w1200 {
+      padding: 22px;
+    }
+    &:not(:last-child):after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100vw;
+      height: 1px;
+      background-color: var(--neutral-10);
+      @include w767 {
+        right: -24px;
+      }
+    }
+    h3 {
+      font-size: 28px;
+      line-height: 33px;
+      @include w1023 {
+        font-size: 20px;
+        line-height: 23px;
+      }
+    }
+    ul:not([class]),
+    ol:not([class]) {
+      padding-left: 17px;
+      li:not(:last-child) {
+        margin-bottom: 14px;
+      }
+    }
+    button {
+      display: none;
+      @include w1023 {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+      }
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    padding-left: 0;
+    list-style: none;
+    @include w1200 {
+      grid-template-columns: auto;
+    }
+    @include w767 {
+      grid-gap: 12px;
+    }
+  }
+  &__item {
+    padding: 20px;
+    border: 1px solid var(--neutral-10);
+    border-radius: 6px;
+    @include w767 {
+      padding: 14px;
+    }
+  }
+  &-item {
+    &__picture {
+      display: block;
+      margin-bottom: 20px;
+      @include w767 {
+        margin-bottom: 12px;
+      }
+    }
+    &__img {
+      width: 100%;
+      height: 209px;
+      object-fit: cover;
+      border-radius: 6px;
+      @include w767 {
+        height: 169px;
+      }
+    }
+    span {
+      display: inline-flex;
+      align-items: center;
+      font-size: 18px;
+      line-height: 24px;
+      @include w767 {
+        font-size: 16px;
+        line-height: 22px;
+      }
+      &:not(:last-child) {
+        &:after {
+          content: '';
+          width: 4px;
+          height: 4px;
+          margin: 0 12px;
+          border-radius: 50%;
+          background-color: var(--neutral-1);
+          @include w767 {
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+  }
+}

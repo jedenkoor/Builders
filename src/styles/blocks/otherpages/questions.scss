@@ -1,0 +1,106 @@
+.questions {
+  &__list {
+    padding: 0;
+    list-style: none;
+  }
+  &__item {
+    position: relative;
+    &:not(:last-child):after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100vw;
+      height: 1px;
+      background-color: var(--neutral-10);
+    }
+    &--active {
+      .questions-item__title {
+        &:after {
+          opacity: 1;
+        }
+        svg {
+          transform: scaleY(-1);
+        }
+        circle {
+          fill: var(--violet-blue);
+        }
+        path {
+          stroke: var(--neutral-14);
+        }
+      }
+      .questions-item__content {
+        display: block;
+      }
+    }
+  }
+  &-item {
+    &__title {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 15px 40px;
+      border: none;
+      background: none;
+      line-height: 22px;
+      text-align: left;
+      cursor: pointer;
+      @include w1023 {
+        padding: 12px 22px 13px;
+        line-height: 19px;
+      }
+      @include hover {
+        &:hover,
+        &:focus {
+          circle {
+            fill: var(--violet-blue);
+          }
+          path {
+            stroke: var(--neutral-14);
+          }
+        }
+      }
+      @include active {
+        &:active {
+          circle {
+            fill: var(--violet-blue);
+          }
+          path {
+            stroke: var(--neutral-14);
+          }
+        }
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 1px;
+        background-color: var(--neutral-10);
+        opacity: 0;
+      }
+      svg {
+        flex-shrink: 0;
+        margin-left: 20px;
+        @include w1023 {
+          width: 29px;
+          height: 29px;
+        }
+        circle,
+        path {
+          transition: 0.2s;
+        }
+      }
+    }
+    &__content {
+      display: none;
+      padding: 40px 100px 40px 40px;
+      @include w1023 {
+        padding: 22px;
+      }
+    }
+  }
+}

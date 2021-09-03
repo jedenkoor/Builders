@@ -1,8 +1,20 @@
 .banner {
   border-bottom: 1px solid var(--neutral-10);
+  overflow: hidden;
   &__container {
     display: flex;
     align-items: center;
+    @include w767 {
+      display: block;
+      padding: 0;
+      border: none;
+    }
+  }
+  &__content {
+    padding: 40px 0;
+    @include w767 {
+      padding: 46px 0 47px;
+    }
   }
   &__title {
     margin-top: 0;
@@ -12,6 +24,21 @@
     font-size: 61px;
     line-height: 69px;
     letter-spacing: 0.02em;
+    @include w1200 {
+      font-size: 48px;
+      line-height: 55px;
+    }
+    @include w1023 {
+      margin-bottom: 18px;
+      font-size: 35px;
+      line-height: 41px;
+      letter-spacing: 0.01em;
+    }
+    @include w767 {
+      margin-bottom: 14px;
+      font-size: 28px;
+      line-height: 33px;
+    }
     span {
       color: var(--violet-blue);
     }
@@ -19,20 +46,73 @@
   &__text {
     margin-bottom: 40px;
     max-width: 400px;
+    @include w1023 {
+      max-width: 290px;
+      margin-bottom: 36px;
+    }
+    @include w767 {
+      max-width: 270px;
+      margin-bottom: 34px;
+    }
   }
   &__btns {
     display: flex;
+    @include w767 {
+      display: block;
+    }
   }
   &__btn {
     padding: 14px 31px;
+    @include w1023 {
+      padding: 10px 35px;
+    }
+    @include w767 {
+      width: 100%;
+    }
     &:not(:last-child) {
       margin-right: 20px;
+      @include w1023 {
+        margin-right: 14px;
+      }
+      @include w767 {
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
     }
   }
   &__picture {
+    align-self: stretch;
     flex: 0 0 513px;
     padding: 40px 0 40px 40px;
     border-left: 1px solid var(--neutral-10);
+    @include w1400 {
+      flex: 0 0 461px;
+      padding: 22px 0 22px 22px;
+    }
+    @include w1200 {
+      flex: 0 0 471px;
+    }
+    @include w1023 {
+      flex: 0 0 206px;
+    }
+    @include w767 {
+      position: relative;
+      display: block;
+      flex: initial;
+      padding: 22px;
+      border-right: 1px solid var(--neutral-10);
+    }
+    &:before {
+      @include w767 {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100vw;
+        width: 200vw;
+        height: 1px;
+        background-color: var(--neutral-10);
+      }
+    }
   }
   &__img {
     border-radius: 6px;
