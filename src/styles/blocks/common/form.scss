@@ -12,6 +12,9 @@
       .form-select__btn:before {
         top: 21px;
         transform: rotate(45deg) scale(-1);
+        @include w1023 {
+          top: 15px;
+        }
       }
     }
   }
@@ -31,6 +34,12 @@
       text-align: left;
       transition: 0.2s;
       cursor: pointer;
+      @include w1023 {
+        height: 39px;
+        padding: 0 18px;
+        font-size: 14px;
+        line-height: 19px;
+      }
       &:hover,
       &:focus {
         border-color: var(--violet-blue);
@@ -46,6 +55,11 @@
         border-right: 1px solid var(--neutral-6);
         border-bottom: 1px solid var(--neutral-6);
         transition: 0.2s;
+        @include w1023 {
+          top: 13px;
+          width: 8px;
+          height: 8px;
+        }
       }
     }
     &__content {
@@ -147,6 +161,10 @@
         line-height: 19px;
         letter-spacing: 0.01em;
         transition: color 0.2s;
+        @include w1023 {
+          font-size: 14px;
+          line-height: 16px;
+        }
         @include hover {
           &:hover {
             color: var(--violet-blue);

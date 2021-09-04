@@ -412,6 +412,10 @@ textarea {
   line-height: 22px;
   color: var(--neutral-1);
   transition: 0.2s;
+  @include w1023 {
+    font-size: 14px;
+    line-height: 19px;
+  }
   &::placeholder {
     color: var(--neutral-7);
   }
@@ -439,12 +443,20 @@ textarea {
 input[type='text'] {
   height: 50px;
   padding: 0 22px;
+  @include w1023 {
+    height: 39px;
+    padding: 0 18px;
+  }
 }
 
 textarea {
   height: 149px;
   padding: 14px 22px;
   resize: none;
+  @include w1023 {
+    height: 110px;
+    padding: 10px 18px;
+  }
 }
 
 @import 'blocks/common/header';
