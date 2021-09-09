@@ -1,0 +1,113 @@
+.popup {
+  width: 100%;
+  max-width: 885px;
+  padding: 100px;
+  border-radius: 6px;
+  @include w1023 {
+    padding: 60px 24px;
+  }
+  &__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Raleway';
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 41px;
+    letter-spacing: 0.01em;
+    @include w1023 {
+      margin-bottom: 8px;
+      font-size: 28px;
+      line-height: 33px;
+    }
+  }
+  &__text {
+    margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--neutral-2);
+    @include w1023 {
+      font-size: 14px;
+      line-height: 19px;
+      color: var(--neutral-1);
+    }
+  }
+  &__subtitle {
+    margin-top: 0;
+    margin-bottom: 22px;
+    font-family: 'Raleway';
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    @include w1023 {
+      margin-bottom: 18px;
+      font-size: 20px;
+      line-height: 23px;
+    }
+  }
+  &__project {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--neutral-10);
+    @include w1023 {
+      padding-bottom: 14px;
+    }
+  }
+  &-project {
+    &__title {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+      line-height: 19px;
+      color: var(--neutral-7);
+      @include w1023 {
+        margin-bottom: 4px;
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    &__value {
+      font-size: 18px;
+      line-height: 24px;
+      @include w1023 {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+  &__theme {
+    margin-top: 30px;
+    margin-bottom: 22px;
+  }
+  .projects-slider {
+    &__tags {
+      max-width: 503px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+      @include w1200 {
+        flex-wrap: nowrap;
+        width: calc(100% + 200px);
+        max-width: none;
+        transform: translateX(-100px);
+        padding-left: 100px;
+      }
+      @include w1023 {
+        width: calc(100% + 48px);
+        transform: translateX(-24px);
+        padding-left: 24px;
+      }
+      &:after {
+        @include w1200 {
+          flex: 0 0 100px;
+        }
+        @include w1023 {
+          flex: 0 0 24px;
+        }
+      }
+    }
+    &__tag {
+      margin-bottom: 12px;
+    }
+  }
+}

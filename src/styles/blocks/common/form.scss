@@ -5,6 +5,9 @@
   input {
     margin-bottom: 14px;
   }
+  input + .form__privacy {
+    margin-top: 26px;
+  }
   &__select {
     position: relative;
     margin-bottom: 14px;

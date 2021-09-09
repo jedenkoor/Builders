@@ -1,0 +1,9 @@
+.popup#callback(style="display: none")
+  h3.popup__title Заказ звонка
+  p.popup__text Введите данные и мы вам перезвоним
+  form.form(action="#") 
+    input(type="text" placeholder="Ваше имя*")
+    input(type="text" placeholder="Ваш телефон*")
+    p.form__privacy Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с
+      a(href="#") политикой конфиденциальности
+    button.form__btn.primary-btn Отправить

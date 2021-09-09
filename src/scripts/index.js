@@ -1,12 +1,29 @@
 import Swiper from 'swiper/swiper-bundle.js'
 import 'swiper/swiper-bundle.css'
 
+import { Fancybox } from '@fancyapps/ui'
+import '@fancyapps/ui/dist/fancybox.css'
+
 class Init {
   constructor() {
     this.init()
   }
 
   init() {
+    this.events()
+
+    Fancybox.bind('[data-fancybox]', {
+      infinite: false,
+      dragToClose: false,
+      Image: {
+        zoom: false
+      },
+      Thumbs: {
+        autoStart: false
+      }
+    })
+    Fancybox.defaults.ScrollLock = false
+
     if (document.querySelectorAll('.projects-slider__content').length) {
       const sliders = document.querySelectorAll('.projects-slider__content')
       sliders.forEach((item) => {
@@ -27,6 +44,57 @@ class Init {
         this.actions().initProjectPageSlider(item)
       })
     }
+  }
+
+  events() {
+    const _this = this
+
+    window.ap(document).on('click', '.select-open', function (e) {
+      e.preventDefault()
+      _this.actions().closeMenu()
+      _this.actions().toggleSelect(this)
+      if (this.classList.contains('header-menu__link')) {
+        _this.actions().toggleHeader()
+      }
+    })
+    document.addEventListener('click', (e) => {
+      if (
+        e.target !== document.querySelector('.select-content') &&
+        e.target.closest('.select-content') === null &&
+        e.target !== document.querySelector('.select-open') &&
+        e.target.closest('.select-open') === null
+      ) {
+        document.querySelectorAll('.select').forEach((item) => {
+          item.classList.remove('select--active')
+        })
+        document.querySelector('.header').classList.remove('header--search')
+      }
+    })
+
+    window.ap(document).on('click', '.accordion__open', function (e) {
+      e.preventDefault()
+      _this.actions().toggleAccordion(this)
+    })
+
+    window.ap(document).on('click', '.header__burger', (e) => {
+      e.preventDefault()
+      _this.actions().toggleMenu()
+    })
+
+    window.ap(document).on('click', '.header-mobile__close', (e) => {
+      _this.actions().closeMenu()
+    })
+
+    window
+      .ap(document)
+      .on('click', '.projects-filters__item--filters .projects-filters__btn', (e) => {
+        e.preventDefault()
+        _this.actions().toggleFilter()
+      })
+
+    window.ap(document).on('click', '.projects-mobfilters__close', (e) => {
+      _this.actions().closeFilter()
+    })
   }
 
   actions() {
@@ -103,6 +171,44 @@ class Init {
               swiper: thumbsSlider
             }
           }))()
+      },
+      toggleSelect(el) {
+        const select = el.closest('.select')
+        if (select.classList.contains('select--active')) {
+          select.classList.remove('select--active')
+        } else {
+          document.querySelectorAll('.select').forEach((item) => {
+            item.classList.remove('select--active')
+          })
+          select.classList.add('select--active')
+        }
+      },
+      toggleAccordion(el) {
+        el.closest('.accordion').classList.toggle('accordion--active')
+      },
+      toggleMenu() {
+        document.querySelector('.header__mobile').classList.toggle('header__mobile--active')
+        const filter = document.querySelector('.projects__mobfilters')
+        if (filter && filter.classList.contains('projects__mobfilters--active')) {
+          return
+        }
+        document.querySelector('html').classList.toggle('fixed')
+      },
+      closeMenu() {
+        document.querySelector('.header__mobile').classList.remove('header__mobile--active')
+        document.querySelector('html').classList.remove('fixed')
+      },
+      toggleFilter() {
+        document
+          .querySelector('.projects__mobfilters')
+          .classList.toggle('projects__mobfilters--active')
+        document.querySelector('html').classList.toggle('fixed')
+      },
+      closeFilter() {
+        document
+          .querySelector('.projects__mobfilters')
+          .classList.remove('projects__mobfilters--active')
+        document.querySelector('html').classList.remove('fixed')
       }
     }
   }

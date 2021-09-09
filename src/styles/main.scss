@@ -459,11 +459,33 @@ textarea {
   }
 }
 
+.fancybox {
+  &__backdrop {
+    background: rgba(21, 21, 21, 0.35) !important;
+  }
+  &__slide {
+    @include w1023 {
+      padding: 16px 65px;
+    }
+    @include w767 {
+      padding: 16px 0;
+    }
+  }
+}
+.carousel__button {
+  top: 20px !important;
+  right: 20px !important;
+  svg {
+    stroke: var(--neutral-1);
+  }
+}
+
 @import 'blocks/common/header';
 @import 'blocks/common/footer';
 @import 'blocks/common/card-project';
 @import 'blocks/common/card-portfolio';
 @import 'blocks/common/form';
+@import 'blocks/common/popup';
 @import 'blocks/mainpage/banner';
 @import 'blocks/mainpage/projects-slider';
 @import 'blocks/mainpage/stages';

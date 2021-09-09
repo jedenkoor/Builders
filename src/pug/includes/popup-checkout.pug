@@ -1,0 +1,49 @@
+.popup#checkout(style="display: none")
+  h3.popup__title Оформление заказа
+  .popup__project.popup-project
+    span.popup-project__title Продукт
+    span.popup-project__value Проект бремен 456
+  .popup__subtitle Вариант комплектации
+  ul.projects-slider__tags
+    li.projects-slider__tag 
+      label
+        input.visually-hidden(type="radio" name="projects")
+        span Проектирование
+    li.projects-slider__tag 
+      label
+        input.visually-hidden(type="radio" name="projects")
+        span С монтажем
+    li.projects-slider__tag 
+      label
+        input.visually-hidden(type="radio" name="projects")
+        span Закрытый контур
+  form.form(action="#") 
+    input(type="text" placeholder="Ваше имя*")
+    input(type="text" placeholder="Ваш телефон*")
+    input(type="text" placeholder="Ваш E-mail*")
+    textarea(placeholder="Сообщение")
+    .form-file__wrap
+      .form__file.form-file
+        label.form-file__label
+          input.visually-hidden(type="file" multiple)
+          span Прикрепить файл
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 12L12.2426 17.7574C11.447 18.553 10.3679 19 9.24264 19C6.8995 19 5 17.1005 5 14.7574C5 13.6321 5.44699 12.553 6.24264 11.7574L12.1716 5.82843C12.702 5.29799 13.4214 5 14.1716 5C15.7337 5 17 6.26633 17 7.82843C17 8.57857 16.702 9.29799 16.1716 9.82843L10.4142 15.5858C10.149 15.851 9.78929 16 9.41421 16C8.63316 16 8 15.3668 8 14.5858C8 14.2107 8.149 13.851 8.41421 13.5858L14 8"/>
+            </svg>
+        ul.form-file__list.form-file-list
+          li.form-file-list__item 
+            span сказка.jpg
+            button.form-file-list__delete 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.59961 5.6001L18.3996 18.4001M5.59961 18.4001L18.3996 5.6001"/>
+              </svg>
+          li.form-file-list__item 
+            span сказки про троллей и эльфов сказки про троллей и эльфов.jpg
+            button.form-file-list__delete 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.59961 5.6001L18.3996 18.4001M5.59961 18.4001L18.3996 5.6001"/>
+              </svg>
+      .form-file__error(style="display: none") Файл не должен превышать 3 МБ
+    p.form__privacy Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с
+      a(href="#") политикой конфиденциальности
+    button.form__btn.primary-btn Отправить
