@@ -1,5 +1,7 @@
 import Swiper from 'swiper/swiper-bundle.js'
 import 'swiper/swiper-bundle.css'
+import noUiSlider from 'noUiSlider/dist/nouislider.min.js'
+import 'noUiSlider/dist/nouislider.min.css'
 
 import { Fancybox } from '@fancyapps/ui'
 import '@fancyapps/ui/dist/fancybox.css'
@@ -11,6 +13,8 @@ class Init {
 
   init() {
     this.events()
+
+    this.actions().initCatalogRangeSlider()
 
     Fancybox.bind('[data-fancybox]', {
       infinite: false,
@@ -209,6 +213,47 @@ class Init {
           .querySelector('.projects__mobfilters')
           .classList.remove('projects__mobfilters--active')
         document.querySelector('html').classList.remove('fixed')
+      },
+      initCatalogRangeSlider() {
+        const filterSliders = document.querySelectorAll('.projects-rangeslider')
+        if (filterSliders.length) {
+          filterSliders.forEach((item) => {
+            const min = +item.getAttribute('data-min')
+            const max = +item.getAttribute('data-max')
+            const step = +item.getAttribute('data-step')
+            const minInput = item.previousElementSibling.querySelector('.projects-rangeslider-from')
+            const maxInput = item.previousElementSibling.querySelector('.projects-rangeslider-to')
+            noUiSlider.create(item, {
+              start: [min, max],
+              step: step,
+              connect: true,
+              range: {
+                min: [min],
+                max: [max]
+              },
+              format: {
+                to: function (value) {
+                  return Math.round(value)
+                },
+                from: function (value) {
+                  return value
+                }
+              }
+            })
+
+            item.noUiSlider.on('slide', function (values, handle) {
+              ;(handle ? maxInput : minInput).value = values[handle]
+            })
+
+            minInput.addEventListener('change', function () {
+              item.noUiSlider.set([this.value.replace(/\s/g, ''), null])
+            })
+
+            maxInput.addEventListener('change', function () {
+              item.noUiSlider.set([null, this.value.replace(/\s/g, '')])
+            })
+          })
+        }
       }
     }
   }

@@ -222,6 +222,56 @@
         margin-top: 40px;
         padding: 14px 0;
       }
+      &__row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        input {
+          flex: 0 0 calc(50% - 6px);
+          background: var(--neutral-12);
+          border-radius: 0;
+          height: 44px;
+          padding: 0 22px;
+          &::placeholder {
+            color: var(--neutral-1);
+          }
+        }
+      }
+      &__rangeslider {
+        height: 3px;
+        border-radius: 3px;
+        margin-top: 10px;
+        padding-right: 8px;
+        border: none;
+        box-shadow: none;
+        background: var(--neutral-11);
+        .noUi-connect {
+          background: var(--neutral-2);
+        }
+        .noUi-handle {
+          top: -3px;
+          right: -8px;
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          box-shadow: none;
+          border-color: var(--neutral-2);
+          background-color: var(--neutral-2);
+          &:hover,
+          &:focus {
+            &:after {
+              display: none;
+            }
+          }
+          &:before,
+          &:after {
+            display: none;
+          }
+          &:after {
+            display: none;
+          }
+        }
+      }
     }
   }
   &__mobfilters {
